@@ -36,4 +36,28 @@ describe('Teste unitário UserEntity', () => {
     expect(sut.props.email).toEqual(props.email)
     expect(typeof sut.props.email).toBe('string')
   })
+
+  it('Setter do campo nome', () => {
+    sut['name'] = 'other name'
+    expect(sut.props.name).toEqual('other name')
+    expect(typeof sut.props.name).toBe('string')
+  })
+
+  it('Setter do campo password', () => {
+    sut['password'] = 'other password'
+    expect(sut.props.password).toEqual('other password')
+    expect(typeof sut.props.password).toBe('string')
+  })
+
+  it('Deve atualizar o user', () => {
+    sut.update('other name')
+    expect(sut.props.name).toEqual('other name')
+    expect(typeof sut.props.name).toBe('string')
+  })
+
+  it('Deve atualizar o campo do password', () => {
+    sut.updatePassword('other password')
+    expect(sut.props.password).toEqual('other password')
+    expect(typeof sut.props.password).toBe('string')
+  })
 })
